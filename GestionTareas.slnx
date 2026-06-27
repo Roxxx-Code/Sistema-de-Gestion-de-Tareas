@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="GestionTareas.API/GestionTareas.API.csproj" />
+  <Project Path="GestionTareas.DataAccess/GestionTareas.DataAccess.csproj" />
+  <Project Path="GestionTareas.Domain/GestionTareas.Domain.csproj" />
+</Solution>
