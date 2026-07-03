@@ -1,10 +1,9 @@
-﻿
-namespace GestionTareas.Domain.Entities;
+﻿namespace GestionTareas.API.DTOs.Response;
 
-public class Usuario : AuditBase
+public class UsuarioResponseDTO
 {
+    public int Id { get; set; }
     public string? Nombre { get; set; }
     public string CorreoElectronico { get; set; }
-    public string Contrasena { get; set; }
     public DateTime FechaRegistro { get; set; }
 }
