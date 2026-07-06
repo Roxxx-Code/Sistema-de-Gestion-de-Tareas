@@ -24,7 +24,7 @@ public class UsuarioService : IUsuarioService
 
         return await _usuarioRepository.GetAllAsync();
     }
-
+    
     public async Task<Usuario?> GetByIdAsync(int id)
     {
         if (id <= 0)
@@ -74,11 +74,13 @@ public class UsuarioService : IUsuarioService
         if (usuarioCorreo != null && usuarioCorreo.Id != usuario.Id)
             throw new InvalidOperationException("El correo electrónico ya está registrado.");
 
-        _logger.LogInformation(
-            "Actualizando usuario con Id {Id}.",
-            usuario.Id);
+        usuarioActual.Nombre = usuario.Nombre;
+        usuarioActual.CorreoElectronico = usuario.CorreoElectronico;
+        usuarioActual.Contrasena = usuario.Contrasena;
 
-        await _usuarioRepository.UpdateAsync(usuario);
+        _logger.LogInformation("Actualizando usuario con Id {Id}.", usuario.Id);
+
+        await _usuarioRepository.UpdateAsync(usuarioActual); 
     }
 
     public async Task DeleteAsync(int id)

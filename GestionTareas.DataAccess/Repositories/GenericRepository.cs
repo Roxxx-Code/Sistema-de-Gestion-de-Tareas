@@ -28,12 +28,12 @@ public class GenericRepository<U> : IGenericRepository<U> where U : AuditBase
         await _context.SaveChangesAsync();
         return entity;
     }
-    public async Task<U> AddAsync(U entity)
+   /* public async Task<U> AddAsync(U entity)
     {
         await _dbSet.AddAsync(entity);
         await _context.SaveChangesAsync();
         return entity;
-    }
+    }*/
     public async Task UpdateAsync(U entity)
     {
         _dbSet.Update(entity);
